@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.conf import settings
+from taggit.managers import TaggableManager
 
 
 class PublishManager(models.Manager):
@@ -40,6 +41,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    tags = TaggableManager()
 
     objects = models.Manager()
     published = PublishManager()
@@ -86,4 +88,4 @@ class Comment(models.Model):
         ]
     
     def __str__(self):
-        return f'Comment by {self.name} on {self.post}'
+        return f'Comment by {self.name} on {self.popyst}'

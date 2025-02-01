@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    "taggit",
     "debug_toolbar",
     "my_blog.apps.MyBlogConfig",
 
