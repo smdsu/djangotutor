@@ -4,3 +4,4 @@ mysite/.env
 /mysite/my_blog/__pycache__
 /mysite/my_blog/migrations/__pycache__
 /mysite/mysite/__pycache__
+/mysite/my_blog/templatetags/__pycache__
