@@ -16,11 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
+from my_blog.sitemaps import PostSiteMap
 
 from debug_toolbar.toolbar import debug_toolbar_urls
 
+
+sitemaps = {
+    'posts': PostSiteMap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('my_blog.urls', namespace='blog'))
+    path('blog/', include('my_blog.urls', namespace='blog')),
+    path(
+        'sitemap.xml',
+        sitemap,
+        {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'
+    )
 ] + debug_toolbar_urls()
 
