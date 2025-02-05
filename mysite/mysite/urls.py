@@ -19,8 +19,6 @@ from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from my_blog.sitemaps import PostSiteMap
 
-from debug_toolbar.toolbar import debug_toolbar_urls
-
 
 sitemaps = {
     'posts': PostSiteMap,
@@ -35,5 +33,5 @@ urlpatterns = [
         {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'
     )
-] + debug_toolbar_urls()
+]
 
